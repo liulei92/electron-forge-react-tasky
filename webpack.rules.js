@@ -15,26 +15,6 @@ module.exports = [
     },
   },
   {
-    test: /\.s[ac]ss$/i,
-    use: [
-      // Creates `style` nodes from JS strings
-      'style-loader',
-      // Translates CSS into CommonJS
-      'css-loader',
-      // Compiles Sass to CSS
-      'sass-loader',
-    ],
-  },
-  {
-    test: /\.less$/i,
-    use: [
-      // compiles Less to CSS
-      'style-loader',
-      'css-loader',
-      'less-loader',
-    ],
-  },
-  {
     test: /\.tsx?$/,
     exclude: /(node_modules|\.webpack)/,
     use: {
@@ -43,5 +23,61 @@ module.exports = [
         transpileOnly: true
       }
     }
+  },
+  {
+    test: /\.css$/,
+    use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
+  },
+  {
+    test: /\.s[ac]ss$/i,
+    exclude: /node_modules/,
+    use: [
+      // Creates `style` nodes from JS strings
+      { loader: 'style-loader' },
+      // Translates CSS into CommonJS
+      { loader: 'css-loader' },
+      // Compiles Sass to CSS
+      { loader: 'sass-loader' },
+    ],
+  },
+  {
+    test: /\.less$/,
+    // exclude: /node_modules/,
+    use: [
+      { loader: 'style-loader' },
+      { loader: 'css-loader' },
+      {
+        loader: 'less-loader',
+        options: {
+          lessOptions: {
+            // 定制主题
+            modifyVars: {
+              'primary-color': '#1DA57A',
+              'link-color': '#1DA57A',
+              'border-radius-base': '2px',
+            },
+            javascriptEnabled: true,
+          },
+        },
+      },
+    ],
+  },
+  {
+    test: /\.module\.less$/,
+    exclude: /node_modules/,
+    use: [
+      { loader: 'style-loader' },
+      { loader: 'css-loader' },
+      {
+        loader: 'less-loader',
+        options: {
+          modules: true,
+          sourceMap: true,
+          lessOptions: {
+            javascriptEnabled: true,
+          },
+        },
+      },
+    ],
   },
 ];

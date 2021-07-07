@@ -33,6 +33,7 @@ import { HashRouter as Router /*  Route, Switch */ } from 'react-router-dom';
 
 import { App } from './App';
 import './index.css';
+import 'antd/dist/antd.less';
 
 ReactDOM.render(<React.StrictMode>
   <Router>
@@ -51,5 +52,9 @@ ReactDOM.render(<React.StrictMode>
 </React.StrictMode>, document.getElementById('root'));
 
 // export default hot(module)(App);
+
+// if (module.hot) {
+//   module.hot.accept();
+// }
 
 console.log('👋 This message is being logged by "renderer.js", included via webpack');

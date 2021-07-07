@@ -4,12 +4,13 @@
  * @Author: LeiLiu
  */
 import React from 'react';
+import { Button } from 'antd';
 
 export const Home = function(props: any) {
   console.log(props);
 
   return (
-    <div>Home</div>
+    <Button>Home</Button>
   );
 };
 
