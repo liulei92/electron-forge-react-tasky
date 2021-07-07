@@ -8,23 +8,30 @@ import { Button } from 'antd';
 
 export default function Remind() {
   const [task, setTask] = useState('');
-  let taskEv:any;
+  // let taskEv:any;
 
   useEffect(() => {
-    console.log(window.electron);
+    console.log(window.api);
     // 在remindWindow渲染进程中，通过ipcRenderer.on接受消息
-    taskEv = window.electron.startTask((task: string) => {
-      console.log(task);
+    // taskEv = window.electron.startTask((task: string) => {
+    //   console.log(task);
+    //   setTask(task);
+    // });
+    window.api.electronIpcOn('setTask', (event, task) => {
+      console.log(event, task);
       setTask(task);
+      // todo 推送todos 清除已弹出的任务
+      // window.api.electronIpcSend('mainWindow:task-delete', task)
+      // todos 需要 electronIpcOn 此事件去处理
     });
     return () => {
       // clearEffect
-      taskEv && taskEv();
+      // taskEv && taskEv();
     };
   }, []);
 
   const onClose = () => {
-    window.electron.ipcRenderer.send('remindWindow:close');
+    window.api.electronIpcSend('remindWindow:close');
   };
 
   return (

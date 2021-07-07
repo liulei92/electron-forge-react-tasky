@@ -3,10 +3,10 @@
  * @Date: 2021-07-07 11:55:40
  * @Author: LeiLiu
  */
-import { ElectronType } from '../preload';
+import { ApiType } from '../preload';
 
 declare global {
   interface Window {
-    electron: ElectronType,
+    api: ApiType,
   }
 }

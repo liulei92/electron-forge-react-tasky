@@ -49,7 +49,7 @@ export default function Add() {
       localStorage.setItem(WORDS.TODOS_LIST, JSON.stringify(list));
       history.push('/todos');
       // 传递任务到主进程
-      window.electron.ipcRenderer.send('setTaskTimer', time.valueOf(), encodeURIComponent(text));
+      window.api.electronIpcSend('setTaskTimer', time.valueOf(), encodeURIComponent(text));
     } catch (errorInfo) {
       console.log('Failed:', errorInfo);
     }

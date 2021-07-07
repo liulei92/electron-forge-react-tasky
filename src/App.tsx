@@ -63,7 +63,7 @@ export function App(): React.ReactElement<Record<string, unknown>> {
               />
             );
           })}
-          <Route exact path="/" component={() => <Redirect to="/home" />} />
+          <Route exact path="/" component={() => <Redirect to="/todos" />} />
         </Switch>
       </div>
     </div>

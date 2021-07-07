@@ -4,7 +4,7 @@
  * @Author: LeiLiu
  */
 import React, { useState, useEffect } from 'react';
-import { Table, Tag, Space, Button } from 'antd';
+import { Table, Tag, Space } from 'antd';
 import { WORDS } from '../../types';
 import './todos.scss';
 
@@ -27,9 +27,9 @@ export default function Todos(props: any) {
     };
   }, []);
 
-  const onQuit = () => {
-    window.electron.send('mainWindow:close'); // ipcRenderer模块向主进程发送消息
-  };
+  // const onQuit = () => {
+  //   window.api.electronIpcSend('mainWindow:close'); // ipcRenderer模块向主进程发送消息
+  // };
 
   const onDone = (e: any, index: number) => {
     e.preventDefault();
@@ -45,7 +45,7 @@ export default function Todos(props: any) {
 
   return (
     <div className="todos">
-      <div className="todos__title">待完成任务 <Button type="primary" size="small" onClick={onQuit}>退出</Button></div>
+      <div className="todos__title">待完成任务</div>
       <Table rowKey="id" dataSource={list} pagination={{ size: 'small' }}>
         <Column title="标题" dataIndex="text" key="text" />
         <Column

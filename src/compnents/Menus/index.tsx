@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import dayjs from 'dayjs';
-import { HistoryOutlined } from '@ant-design/icons';
+import { HistoryOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import { Routes } from '../../router';
 import './menus.scss';
 
@@ -45,7 +45,8 @@ export default function Menus(props: any) {
       </div>
       <div className="root-menus__actions">
         <div className="root-menus__actions-item" onClick={add}>
-          <i>+</i>
+          {/* <i>+</i> */}
+          <PlusCircleOutlined style={{ fontSize: 24, color: '#31c27c' }} />
           <span>添加任务</span>
         </div>
       </div>

@@ -17,16 +17,23 @@ export const Routes: RoutesType = [
   {
     name: 'home',
     path: '/home',
-    component: lazy(() => import('../pages/home'))
+    component: lazy(() => import('../pages/home')),
+    hidden: true
   },
   {
     name: 'about',
     path: '/about',
-    component: lazy(() => import('../pages/about'))
+    component: lazy(() => import('../pages/about')),
+    hidden: true
   },
   {
     name: 'todos',
     path: '/todos',
+    component: lazy(() => import('../pages/Todos'))
+  },
+  {
+    name: 'dones',
+    path: '/dones',
     component: lazy(() => import('../pages/Todos'))
   },
   {

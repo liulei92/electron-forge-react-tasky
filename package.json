@@ -20,16 +20,13 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "icon": "static/img/icon",
         "asar": true
       },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "tasky",
-            "iconUrl": "",
-            "setupIcon": "static/img/icon.png"
+            "name": "tasky"
           }
         },
         {
