@@ -1,0 +1,14 @@
+.todos {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 20px;
+  color: #333333;
+  &__title {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+}

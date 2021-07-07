@@ -19,12 +19,17 @@
   "license": "MIT",
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "icon": "static/img/icon",
+        "asar": true
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "electron_forge_react_tasky"
+            "name": "tasky",
+            "iconUrl": "",
+            "setupIcon": "static/img/icon.png"
           }
         },
         {
@@ -54,6 +59,14 @@
                   "html": "./src/index.html",
                   "js": "./src/renderer.tsx",
                   "name": "main_window",
+                  "preload": {
+                    "js": "./src/preload/index.ts"
+                  }
+                },
+                {
+                  "html": "./src/remind/index.html",
+                  "js": "./src/remind/renderer.tsx",
+                  "name": "remind_window",
                   "preload": {
                     "js": "./src/preload/index.ts"
                   }

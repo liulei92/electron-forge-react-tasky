@@ -80,4 +80,15 @@ module.exports = [
       },
     ],
   },
+  {
+    test: /\.(webp|jpg|png|gif)$/,
+    use: {
+      loader: 'url-loader',
+      options: {
+        limit: 2048,
+        name: '[name].[ext]',
+        outputPath: './static/'
+      }
+    }
+  }
 ];

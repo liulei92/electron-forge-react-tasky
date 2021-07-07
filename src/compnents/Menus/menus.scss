@@ -1,0 +1,67 @@
+.root-menus {
+  padding: 50px 0;
+  width: 200px;
+  height: 100%;
+  background-color: #f8f8f8;
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  &__title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #31c27c;
+    .anticon {
+      margin-left: 4px;
+      color: #333333;
+      cursor: pointer;
+    }
+  }
+  &__container {
+    width: 100%;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    &-item {
+      padding: 8px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-bottom: 15px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &.active {
+        background-color: #31c27c;
+        color: #fff;
+      }
+    }
+  }
+  &__actions {
+    width: 100%;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 24px;
+    &-item {
+      padding: 8px 20px;
+      font-size: 16px;
+      display: flex;
+      cursor: pointer;
+      i {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #31c27c;
+        color: #ffffff;
+        font-size: 24px;
+        line-height: 24px;
+        text-align: center;
+        text-indent: -2px;
+        margin-right: 8px;
+       }
+    }
+  }
+}

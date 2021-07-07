@@ -14,6 +14,10 @@ module.exports = {
   plugins: plugins,
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.scss', '.sass', '.less'],
+    fallback: {
+      'fs': 'empty',
+      'path': false
+    },
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
