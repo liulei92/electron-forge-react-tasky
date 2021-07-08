@@ -8,9 +8,9 @@
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "publish": "electron-forge publish",
+    "release": "electron-forge publish",
     "lint": "eslint --ext .ts .",
-    "build-icon": "electron-icon-builder --input=./static/img/icon.png --output=build --flatten",
+    "build-icon": "electron-icon-builder --input=assets/icons/icon.png --output=assets --flatten",
     "publish:mac": "electron-forge publish --target=github --platform=darwin",
     "publish:win": "electron-forge publish --target=github --platform=win32",
     "publish:linux": "electron-forge publish --target=github --platform=linux"

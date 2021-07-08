@@ -1,6 +1,6 @@
 /*
- * @Description: preload.ts
- * @Date: 2021-07-07 09:16:09
+ * @Description: bridge.ts
+ * @Date: 2021-07-08 16:03:14
  * @Author: LeiLiu
  */
 import { contextBridge, ipcRenderer } from 'electron';
@@ -61,4 +61,3 @@ const api = {
 export type ApiType = typeof api;
 // contextIsolation true 才生效
 contextBridge.exposeInMainWorld('api', api);
-

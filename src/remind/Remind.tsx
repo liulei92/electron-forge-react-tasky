@@ -17,7 +17,7 @@ export default function Remind() {
     //   console.log(task);
     //   setTask(task);
     // });
-    window.api.electronIpcOn('setTask', (event, task) => {
+    window.api.electronIpcOn('setTask', (event: any, task: string) => {
       console.log(event, task);
       setTask(task);
       // todo 推送todos 清除已弹出的任务

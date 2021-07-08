@@ -5,14 +5,19 @@
  */
 module.exports = {
   'packagerConfig': {
-    'icon': './build/icons/icon',
+    'name': 'tasky',
+    'executableName': 'tasky',
+    'icon': 'assets/icons/icon',
     'asar': true,
+    'extraResource': [
+      'assets'
+    ],
 
     // name: 'MyApp',
     // executableName: 'MyApp',
     // asar: true,
     // icon: 'src/images/icon128@2x',
-    ignore: ['./.webpack/'],
+    // ignore: ['./.webpack/'],
     // appBundleId: 'MyAppId',
     // osxSign: {
     //   identity: 'Developer ID Application: John Smith(90210)',
@@ -63,16 +68,16 @@ module.exports = {
     [
       '@electron-forge/plugin-webpack',
       {
-        'mainConfig': './webpack.main.config.js',
+        'mainConfig': './webpack/main.config.js',
         'renderer': {
-          'config': './webpack.renderer.config.js',
+          'config': './webpack/renderer.config.js',
           'entryPoints': [
             {
               'html': './src/index.html',
               'js': './src/renderer.tsx',
               'name': 'main_window',
               'preload': {
-                'js': './src/preload/index.ts'
+                'js': './electron/bridge.ts'
               }
             },
             {
@@ -80,7 +85,7 @@ module.exports = {
               'js': './src/remind/renderer.tsx',
               'name': 'remind_window',
               'preload': {
-                'js': './src/preload/index.ts'
+                'js': './electron/bridge.ts'
               }
             }
           ]
