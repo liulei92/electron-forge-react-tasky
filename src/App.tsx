@@ -8,7 +8,7 @@ import { Switch, Route, Redirect, /* useHistory */ } from 'react-router-dom';
 import dayjs from 'dayjs';
 // import styled from "styled-components";
 import { Routes } from './router';
-import Menus from './compnents/Menus';
+import Menus from './components/Menus';
 import { WORDS } from './types';
 
 // const Container = styled.div`

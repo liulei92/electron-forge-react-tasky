@@ -13,3 +13,8 @@ https://github.com/codesbiome/electron-react-webpack-typescript-2021
 [electron 基操学习2](https://juejin.cn/post/6947981584519823367)
 
 https://www.bookstack.cn/read/electronjs-13.0-zh/f2f462fc684d62d7.md
+
+通过CI系统自动构建与发布
+https://blog.csdn.net/chenggedian7759/article/details/100985590
+https://travis-ci.com/github/liulei92/electron-forge-react-tasky/builds
+http://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html
