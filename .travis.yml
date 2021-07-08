@@ -2,7 +2,7 @@ install:
   - nvm install 14.15.1
   - yarn
 script:
-  - yarn publish
+  - yarn publish --target=github
 branches:
   only:
     - master
