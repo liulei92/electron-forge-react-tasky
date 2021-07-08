@@ -5,8 +5,8 @@
  */
 module.exports = {
   'packagerConfig': {
-    'name': 'tasky',
-    'executableName': 'tasky',
+    'name': 'electron-forge-react-tasky',
+    'executableName': 'electron-forge-react-tasky',
     'icon': 'assets/icons/icon',
     'asar': true,
     'extraResource': [
@@ -36,7 +36,7 @@ module.exports = {
     {
       'name': '@electron-forge/maker-squirrel',
       'config': {
-        'name': 'tasky'
+        'name': 'electron-forge-react-tasky'
       }
     },
     {
@@ -48,7 +48,7 @@ module.exports = {
     {
       'name': '@electron-forge/maker-deb',
       'config': {
-        'name': 'tasky'
+        'name': 'electron-forge-react-tasky'
       }
     }
   ],
@@ -61,6 +61,7 @@ module.exports = {
       },
       'prerelease': false,
       'releaseType': 'release',
+      'draft': true,
       'authToken': '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'
     }
   ],
