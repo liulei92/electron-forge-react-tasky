@@ -26,3 +26,9 @@ body {
 .root-path__container {
   flex: 1 1 auto;
 }
+
+.test {
+  width: 440px;
+  height: 440px;
+  background-image: url("./images/background_2.png");
+}

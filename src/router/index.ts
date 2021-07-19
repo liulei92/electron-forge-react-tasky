@@ -17,29 +17,29 @@ export const Routes: RoutesType = [
   {
     name: 'home',
     path: '/home',
-    component: lazy(() => import('../pages/home')),
+    component: lazy(() => import(/* webpackChunkName: "home" */ '../pages/home')),
     hidden: true
   },
   {
     name: 'about',
     path: '/about',
-    component: lazy(() => import('../pages/about')),
+    component: lazy(() => import(/* webpackChunkName: "about" */ '../pages/about')),
     hidden: true
   },
   {
     name: 'todos',
     path: '/todos',
-    component: lazy(() => import('../pages/Todos'))
+    component: lazy(() => import(/* webpackChunkName: "todos" */ '../pages/Todos'))
   },
   {
     name: 'dones',
     path: '/dones',
-    component: lazy(() => import('../pages/Todos'))
+    component: lazy(() => import(/* webpackChunkName: "dones" */ '../pages/Todos'))
   },
   {
     name: 'add',
     path: '/add',
-    component: lazy(() => import('../pages/Add')),
+    component: lazy(() => import(/* webpackChunkName: "add" */ '../pages/Add')),
     hidden: true
   },
 ];

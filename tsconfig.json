@@ -5,16 +5,15 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "baseUrl": ".",
     "outDir": "dist",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "paths": {
       "*": ["node_modules/*"],
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"],
+      "components/*": ["src/components/*"]
     },
     "jsx": "react"
   },

@@ -33,7 +33,6 @@ import { HashRouter as Router /*  Route, Switch */ } from 'react-router-dom';
 
 import { App } from './App';
 import './index.css';
-import 'antd/dist/antd.less';
 
 ReactDOM.render(<React.StrictMode>
   <Router>

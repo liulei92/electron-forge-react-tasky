@@ -9,6 +9,7 @@ import dayjs from 'dayjs';
 import { HistoryOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import { Routes } from '../../router';
 import './menus.scss';
+// import background_2 from '../../img/background_3.jpg';
 
 let timer: any;
 
@@ -43,6 +44,7 @@ export default function Menus(props: any) {
           })
         }
       </div>
+      {/* <img src={background_2} alt="" /> */}
       <div className="root-menus__actions">
         <div className="root-menus__actions-item" onClick={add}>
           {/* <i>+</i> */}

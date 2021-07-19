@@ -1,3 +1,7 @@
+const tsImportPluginFactory = require('ts-import-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const IS_PRO = process.env.NODE_ENV === 'production';
+
 module.exports = [
   // Add support for native node modules
   {
@@ -15,25 +19,35 @@ module.exports = [
     },
   },
   {
-    test: /\.tsx?$/,
+    test: /\.tsx?$/, // test: /\.(jsx|tsx|js|ts)$/,
     exclude: /(node_modules|\.webpack)/,
     use: {
       loader: 'ts-loader',
       options: {
-        transpileOnly: true
+        transpileOnly: true,
+        // ts 按需加载
+        getCustomTransformers: () => ({
+          before: [ tsImportPluginFactory({
+            'libraryName': 'antd',
+            'style': true
+          }) ]
+        }),
+        compilerOptions: {
+          module: 'es2015'
+        }
       }
     }
   },
   {
     test: /\.css$/,
-    use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
+    use: [{ loader: IS_PRO ? MiniCssExtractPlugin.loader : 'style-loader' }, { loader: 'css-loader' }],
   },
   {
     test: /\.s[ac]ss$/i,
     exclude: /node_modules/,
     use: [
       // Creates `style` nodes from JS strings
-      { loader: 'style-loader' },
+      { loader: IS_PRO ? MiniCssExtractPlugin.loader : 'style-loader' },
       // Translates CSS into CommonJS
       { loader: 'css-loader' },
       // Compiles Sass to CSS
@@ -44,7 +58,7 @@ module.exports = [
     test: /\.less$/,
     // exclude: /node_modules/,
     use: [
-      { loader: 'style-loader' },
+      { loader: IS_PRO ? MiniCssExtractPlugin.loader : 'style-loader' },
       { loader: 'css-loader' },
       {
         loader: 'less-loader',
@@ -86,9 +100,16 @@ module.exports = [
       loader: 'url-loader',
       options: {
         limit: 2048,
-        name: '[name].[ext]',
-        outputPath: './static/'
+        name: '[name].[hash:8].[ext]',
+        outputPath: './static/images'
       }
     }
-  }
+  },
+  // {
+  //   loader: require.resolve('file-loader'),
+  //   exclude: [/\.(js|mjs|jsx|ts|tsx|css|less|scss)$/, /\.html$/, /\.json$/],
+  //   options: {
+  //     name: 'static/media/[name].[ext]',
+  //   },
+  // }
 ];

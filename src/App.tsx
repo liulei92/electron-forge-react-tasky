@@ -7,9 +7,11 @@ import React, { /* useState, */ useEffect } from 'react';
 import { Switch, Route, Redirect, /* useHistory */ } from 'react-router-dom';
 import dayjs from 'dayjs';
 // import styled from "styled-components";
-import { Routes } from './router';
-import Menus from './components/Menus';
-import { WORDS } from './types';
+import { Routes } from '@/router';
+import Menus from '@/components/Menus';
+import { WORDS } from '@/types';
+
+// import background_3 from './images/background_3.jpg';
 
 // const Container = styled.div`
 //   flex: 1;
@@ -65,6 +67,9 @@ export function App(): React.ReactElement<Record<string, unknown>> {
           })}
           <Route exact path="/" component={() => <Redirect to="/todos" />} />
         </Switch>
+
+        {/* <img src={background_3} alt="" /> */}
+        {/* <div className="test"></div> */}
       </div>
     </div>
   );

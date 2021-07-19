@@ -37,8 +37,8 @@ const createWindow = (): void => {
 
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    frame: false, // 创建无边框窗口
-    resizable: false,
+    frame: isDev, // 创建无边框窗口
+    resizable: isDev,
     height: 600,
     width: 1200,
     icon: iconPath,
@@ -62,7 +62,7 @@ const createWindow = (): void => {
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
   // 移除菜单，若不进行此操作，可使用ctrl+shift+i打开开发者工具
-  mainWindow.removeMenu();
+  !isDev && mainWindow.removeMenu();
 
   // Open the DevTools.
   isDev && mainWindow.webContents.openDevTools();

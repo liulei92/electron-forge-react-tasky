@@ -8,7 +8,7 @@ module.exports = {
     'name': 'electron-forge-react-tasky',
     'executableName': 'electron-forge-react-tasky',
     'icon': 'assets/icons/icon',
-    'asar': true,
+    'asar': false,
     'extraResource': [
       'assets'
     ],

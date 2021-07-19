@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  devtool: process.env.NODE_ENV !== 'development' ? false : 'cheap-module-source-map', // SourceMap
   /**
    * This is the main entry point for your application, it's the first file
    * that runs in the main process.
